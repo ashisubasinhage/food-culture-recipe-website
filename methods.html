@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cooking Methods</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="dark-mode">
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">FoodCulture</span>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="culture.html" class="nav-link">Food Culture</a></li>
+        <li class="nav-item"><a href="recipes.html" class="nav-link">Recipes</a></li>
+        <li class="nav-item"><a href="methods.html" class="nav-link active">Cooking Methods</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Cooking Methods</h1>
+<div class="search-container">
+  <input type="text" id="methodSearch" placeholder="Search cooking methods..." aria-label="Search cooking methods">
+</div>
+
+  </header>
+
+  <section class="content-section">
+    <div class="method-grid" >
+      <a class="method-card method-card-link" href="method-detail.html?method=0"><div class="method-card">
+        <img src="images/Boiling.webp" alt="Boiling" />
+        <h3>Boiling</h3>
+        <p>Cooking food in hot water, commonly used for rice and vegetables.</p>
+      </div></a>
+
+      <a class="method-card method-card-link" href="method-detail.html?method=1"><div class="method-card">
+        <img src="images/Frying.webp" alt="Frying" />
+        <h3>Frying</h3>
+        <p>Cooking food in hot oil to get a crispy texture, such as fried snacks.</p>
+      </div></a>
+
+      <a class="method-card method-card-link" href="method-detail.html?method=2"><div class="method-card">
+        <img src="images/steaming.webp" alt="Steaming" />
+        <h3>Steaming</h3>
+        <p>Using steam to cook food, preserving nutrients and flavor.</p>
+      </div></a>
+      <a class="method-card method-card-link" href="method-detail.html?method=3"><div class="method-card">
+        <img src="images/baking.webp" alt="Baking" />
+        <h3>Baking</h3>
+        <p>Cooking food with dry heat in an oven, used for bread and cakes.</p>
+      </div></a>
+
+      <a class="method-card method-card-link" href="method-detail.html?method=4"><div class="method-card">
+        <img src="images/grilling.webp" alt="Grilling" />
+	 <h3>Grilling</h3>
+        <p>Cooking food with direct heat, usually from below or above, to develop a rich flavour.</p>
+      </div></a>
+
+      <a class="method-card method-card-link" href="method-detail.html?method=5"><div class="method-card">
+        <img src="images/roasting.webp" alt="Roasting" />
+	 <h3>Roasting</h3>
+        <p>Cooking food with dry heat, commonly in an oven, to develop colour and flavour.</p>
+      </div></a>
+
+      <a class="method-card method-card-link" href="method-detail.html?method=6"><div class="method-card">
+        <img src="images/sauteing.webp" alt="Sauteing" />
+	<h3>Sauteing</h3>
+        <p>Quickly cooking small pieces of food in a small amount of oil or fat.</p>
+      </div></a>
+
+      <a class="method-card method-card-link" href="method-detail.html?method=7"><div class="method-card">
+        <img src="images/poaching.webp" alt="Poaching" />
+	<h3>Poaching</h3>
+        <p>Gently cooking food in a hot liquid kept below a full boil.</p>
+      </div></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Food Culture Project | All rights reserved</p>
+  </footer>
+<script src="script.js"></script>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    if (hamburger && navMenu) {
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+      document.querySelectorAll(".nav-link").forEach(link => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        });
+      });
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

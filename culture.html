@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Food Culture</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="dark-mode">
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">FoodCulture</span>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="culture.html" class="nav-link active">Food Culture</a></li>
+        <li class="nav-item"><a href="recipes.html" class="nav-link">Recipes</a></li>
+        <li class="nav-item"><a href="methods.html" class="nav-link">Cooking Methods</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Food Culture</h1>
+
+<section class="food-culture-intro">
+      <h2>Understanding Food Culture</h2>
+      <p>Food culture is the way people choose, prepare, share, and enjoy food within a community. It reflects a country's history, traditions, climate, local ingredients, celebrations, and everyday lifestyle.</p>
+      <p>Exploring food culture helps us understand how food connects people and how traditional dishes and cooking practices are passed from one generation to another.</p>
+    </section>
+
+  </header>
+
+  <section class="culture-countries-section">
+    <div class="culture-section-heading">
+      <p class="eyebrow">Taste the World</p>
+      <h2>Food Culture Around the World</h2>
+      <p>Explore how history, traditions, ingredients and everyday life shape the food of different countries.</p>
+    </div>
+    <div id="cultureCountryGrid" class="culture-country-grid"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Food Culture Project | All rights reserved</p>
+  </footer>
+  <script src="culture-data.js"></script>
+  <script src="culture-cards.js"></script>
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }));
+  </script>
+</body>
+
+</html>

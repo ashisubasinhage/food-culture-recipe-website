@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Food Culture Detail</title><link rel="stylesheet" href="styles.css"></head>
+<body class="dark-mode culture-detail-page">
+<nav class="navbar"><div class="nav-container"><div class="nav-logo"><span class="logo-text">FoodCulture</span></div><ul class="nav-menu"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="culture.html" class="nav-link active">Food Culture</a></li><li><a href="recipes.html" class="nav-link">Recipes</a></li><li><a href="methods.html" class="nav-link">Cooking Methods</a></li></ul><div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div></div></nav>
+<main id="cultureDetail"></main>
+<footer><p>© 2025 Food Culture Project | All rights reserved</p></footer>
+<script src="culture-data.js"></script><script>
+const menu=document.querySelector('.hamburger'), nav=document.querySelector('.nav-menu'); if(menu) menu.onclick=()=>{menu.classList.toggle('active');nav.classList.toggle('active')};
+const i=Number(new URLSearchParams(location.search).get('country')); const x=cultureData[i]||cultureData[0];
+document.getElementById('cultureDetail').innerHTML=`<section class="culture-detail-hero"><a class="back-link" href="culture.html">← Back to Food Culture</a><div class="culture-detail-grid"><div class="culture-detail-image"><img src="images/${x.image}" alt="${x.country} food culture"><span>Food Culture • ${x.country}</span></div><div><p class="eyebrow">A Taste of ${x.country}</p><h1>${x.country} Food Culture</h1><p class="culture-lead">${x.tagline}</p></div></div></section><section class="culture-detail-body"><article class="culture-story"><p class="eyebrow">Cultural Story</p><h2>Food, People & Tradition</h2><p>${x.overview}</p></article><div class="culture-info-grid"><article class="culture-info-card"><span class="info-icon">🍴</span><h3>Popular Foods</h3><div class="culture-foods">${x.foods.map(f=>`<span>${f}</span>`).join('')}</div></article><article class="culture-info-card"><span class="info-icon">🌿</span><h3>Food Traditions</h3><ul>${x.traditions.map(t=>`<li>${t}</li>`).join('')}</ul></article></div></section>`;
+</script></body></html>
